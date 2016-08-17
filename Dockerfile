@@ -4,6 +4,7 @@ ENV FILE_TYPE ""
 ENV LINK_FILE_TO_DOWNLOAD ""
 ENV GRIB_PARAMS ""
 ENV GRIB_POSITION ""
+ENV DEBUG false
 
 # Install script dependance avaible on apt source
 RUN apt-get update && apt-get install -y \
