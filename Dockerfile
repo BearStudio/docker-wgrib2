@@ -4,7 +4,7 @@ ENV FILE_TYPE ""
 ENV LINK_FILE_TO_DOWNLOAD ""
 ENV GRIB_PARAMS ""
 ENV GRIB_POSITION ""
-ENV DEBUG false
+ENV DEBUG true
 
 # Install script dependance avaible on apt source
 RUN apt-get update && apt-get install -y \
@@ -30,3 +30,6 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /opt/
 VOLUME /srv/
 VOLUME /opt/
+
+CMD ["/opt/entrypoint.sh"]
+
