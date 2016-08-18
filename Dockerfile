@@ -1,5 +1,7 @@
 FROM docker.io/debian:jessie
 
+MAINTAINER BearStudio <contact@bearstudio.fr>
+
 ENV FILE_TYPE ""
 ENV LINK_FILE_TO_DOWNLOAD ""
 ENV GRIB_PARAMS ""
@@ -14,6 +16,8 @@ RUN apt-get update && apt-get install -y \
                 build-essential \
                 bzip2 \
                 tar \
+                amqp-tools \
+                openssh-client \
                 gfortran \
                 --no-install-recommends && rm -r /var/lib/apt/lists/* && \
                 wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz.v2.0.4 -O /tmp/wgrib2.tgz && \
@@ -32,4 +36,3 @@ VOLUME /srv/
 VOLUME /opt/
 
 CMD ["/opt/entrypoint.sh"]
-
