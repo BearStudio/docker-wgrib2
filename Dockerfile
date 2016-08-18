@@ -1,9 +1,11 @@
 FROM docker.io/debian:jessie
 
+# Declare global variable for your sripts
 ENV FILE_TYPE ""
 ENV LINK_FILE_TO_DOWNLOAD ""
 ENV GRIB_PARAMS ""
 ENV GRIB_POSITION ""
+ENV OTHER ""
 ENV DEBUG true
 
 # Install script dependance avaible on apt source
